@@ -3,16 +3,45 @@
 :root {
   --f-family: 'Poppins', sans-serif;
   --f-size: 16px;
+
+  --c-primary: #0d6efd;
+  --c-primary-light: #3d8bfb;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: var(--f-family);
+  font-size: var(--f-size);
 }
 
 html,
 body {
-  font-family: var(--f-family);
-  font-size: var(--f-size);
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: var(--c-primary);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--c-primary-light);
 }
