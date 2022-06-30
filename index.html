@@ -9,6 +9,22 @@
 </head>
 
 <body>
+  <main>
+    <canvas id="canvas">
+      <p>Your browser does not support the HTML5 canvas tag.</p>
+    </canvas>
+
+    <div>
+      <input type="number" name="angle" min="0" max="90" placeholder="Angle (deg)" />
+      <input type="number" name="velocity" min="0" placeholder="Velocity (m/s)" />
+    </div>
+
+    <div>
+      <button data-start>Start</button>
+      <button data-reset>Reset</button>
+    </div>
+  </main>
+
   <script type="module" src="/src/main.js"></script>
 </body>
 
