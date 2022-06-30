@@ -1,6 +1,6 @@
 import './assets/style.css'
-import { getFlightTime, getPlot } from './projectile'
 import { toRad, randomColor, drawPoint } from './helpers'
+import { getFlightTime, getMaxHeight, getDistance, getPlot } from './projectile'
 
 const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d')
@@ -11,29 +11,41 @@ const resetButton = document.querySelector('[data-reset]')
 const angleField = document.querySelector('[name="angle"]')
 const velocityField = document.querySelector('[name="velocity"]')
 
+const resultsField = document.querySelector('[data-results]')
+const timeField = resultsField.querySelector('[data-time]')
+const heightField = resultsField.querySelector('[data-height]')
+const distanceField = resultsField.querySelector('[data-distance]')
+
 document.addEventListener('DOMContentLoaded', () => {
   startButton.addEventListener('click', start)
   resetButton.addEventListener('click', reset)
   window.addEventListener('resize', setCanvasSize)
   setCanvasSize()
+  reset()
 })
 
 const start = () => {
-  const angle = angleField.value
-  const velocity = velocityField.value
+  const angle = +angleField.value
+  const velocity = +velocityField.value
 
-  if (isNaN(angle) || isNaN(angle)) {
+  if (angle > 90 || angle < 0 || velocity < 0) {
     return alert('Invalid input')
   }
 
-  drawProjectile(angle, velocity)
+  const radial = toRad(angle)
+  const flightTime = getFlightTime(velocity, radial)
+  const maxHeight = getMaxHeight(velocity, radial)
+  const distance = getDistance(velocity, radial)
+
+  timeField.innerHTML = `Flight time: ${flightTime.toFixed(2)}s`
+  heightField.innerHTML = `Max height: ${maxHeight.toFixed(2)}m`
+  distanceField.innerHTML = `Distance: ${distance.toFixed(2)}m`
+
+  drawProjectile(radial, velocity, flightTime)
   startButton.setAttribute('disabled', true)
 }
 
-const drawProjectile = (angle, velocity) => {
-  const radial = toRad(angle)
-  const flightTime = getFlightTime(velocity, radial)
-
+const drawProjectile = (radial, velocity, flightTime) => {
   let time = 0
   const color = randomColor()
 
@@ -54,6 +66,10 @@ const reset = () => {
   startButton.removeAttribute('disabled')
   angleField.value = velocityField.value = ''
   ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+  timeField.innerHTML = 'Flight time: 0.00s'
+  heightField.innerHTML = 'Max height: 0.00m'
+  distanceField.innerHTML = 'Distance: 0.00m'
 }
 
 const setCanvasSize = () => {

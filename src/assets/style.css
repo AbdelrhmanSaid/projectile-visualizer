@@ -80,3 +80,13 @@ button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
+
+[data-results] {
+  display: flex;
+  gap: 10px;
+}
+
+[data-results] span:not(:last-child) {
+  padding-right: 10px;
+  border-right: 1px solid #ccc;
+}
