@@ -19,6 +19,6 @@ A simple web application that visualizes the motion of a projectile with a given
 - [Vite](https://vitejs.dev/): A blazing fast JavaScript bundler.
 
 ## References
-- [Verginia Projectile Visualizer](http://galileoandeinstein.physics.virginia.edu/more_stuff/Applets/Projectile/projectile.html)
+- [Virginia Projectile Visualizer](http://galileoandeinstein.physics.virginia.edu/more_stuff/Applets/Projectile/projectile.html)
 - [Nagwa Projectile Explanation](https://www.nagwa.com/ar/explainers/160105648490/)
 - [Professor Dave's: Projectile Motion](https://www.youtube.com/watch?v=aY8z2qO44WA)
