@@ -3,7 +3,8 @@ export const toRad = (deg) => {
 }
 
 export const randomColor = () => {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`
+  const MAX_COLORS = 16777215
+  return `#${Math.floor(Math.random() * MAX_COLORS).toString(16)}`
 }
 
 export const drawPoint = (ctx, x, y, color = '#dc3545') => {
