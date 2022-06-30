@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projectile Motion Visualizer</title>
+  <script type="module" crossorigin src="./assets/index.3167ba76.js"></script>
+  <link rel="stylesheet" href="./assets/index.c3f203f7.css">
+</head>
+
+<body>
+  <main>
+    <canvas id="canvas">
+      <p>Your browser does not support the HTML5 canvas tag.</p>
+    </canvas>
+
+    <div>
+      <input type="number" name="angle" min="0" max="90" placeholder="Angle (deg)" />
+      <input type="number" name="velocity" min="0" placeholder="Velocity (m/s)" />
+    </div>
+
+    <div>
+      <button data-start>Start</button>
+      <button data-reset>Reset</button>
+    </div>
+
+    <p data-results>
+      <span data-time></span>
+      <span data-height></span>
+      <span data-distance></span>
+    </p>
+  </main>
+
+  
+</body>
+
+</html>
