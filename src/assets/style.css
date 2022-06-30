@@ -23,6 +23,36 @@ body {
   place-items: center;
 }
 
+main {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    max-width: 80vw;
+    align-items: center;
+  }
+}
+
+[data-result]:empty {
+  display: none;
+}
+
+canvas {
+  border: 2px solid transparent;
+  border-left-color: #000;
+  border-bottom-color: #000;
+  background: url('./grid.svg');
+}
+
+main > div {
+  display: flex;
+  gap: 10px;
+}
+
 input {
   width: 100%;
   padding: 10px;
@@ -44,4 +74,9 @@ button {
 
 button:hover {
   background-color: var(--c-primary-light);
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
