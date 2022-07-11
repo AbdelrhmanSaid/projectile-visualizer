@@ -2,6 +2,8 @@
 
 A simple web application that visualizes the motion of a projectile with a given angle and velocity.
 
+Live [Here](https://abdelrhmansaid.github.io/projectile-visualizer/)
+
 ## Scripts
 
 - Build the project.
